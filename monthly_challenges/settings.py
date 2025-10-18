@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'django_course.urls'
+ROOT_URLCONF = 'monthly_challenges.urls'
 
 TEMPLATES = [
     {
@@ -66,7 +66,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'django_course.wsgi.application'
+WSGI_APPLICATION = 'monthly_challenges.wsgi.application'
 
 
 # Database
