@@ -20,8 +20,30 @@ monthly_challenges = {
 }
 
 
+def index(request):
+   """Display a list of all months as links to their challenge pages."""
+   list_items = ""
+   months = list(monthly_challenges.keys())
+   for month in months:
+      capitalized_month = month.capitalize()
+       # Generate URL for each month's challenge
+      month_path = reverse("month-challenge",args=[month])
+      list_items += f" <li><a href=\"{month_path}\">{capitalized_month}</a></li>"
+
+
+   respose_data =f"<ul>{list_items}</ul>"
+   return HttpResponse(f"<h1>{respose_data}</h1>")
+
 
 def monthly_challenge_by_number(request,month):
+  """
+    Redirect the user to the monthly challenge page 
+    based on the month number provided in the URL.
+    
+    Example:
+        /challenge/2 → redirects to /challenge/february
+    """
+
   # Create a list containing all the month names (dictionary keys)
   months = list(monthly_challenges.keys())
 
@@ -37,6 +59,12 @@ def monthly_challenge_by_number(request,month):
 
 
 def monthly_challenge(request,month):
+  """
+    Display the challenge text for the given month.
+
+    If the month does not exist in the dictionary, 
+    return a '404 Not Found' style response.
+    """
   try:
       challenge_text = monthly_challenges[month]
       responce_data = f"<h1>{challenge_text}</h1>"
