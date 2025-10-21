@@ -26,6 +26,7 @@ def index(request):
    months = list(monthly_challenges.keys())
    for month in months:
       capitalized_month = month.capitalize()
+
        # Generate URL for each month's challenge
       month_path = reverse("month-challenge",args=[month])
       list_items += f" <li><a href=\"{month_path}\">{capitalized_month}</a></li>"
@@ -67,7 +68,12 @@ def monthly_challenge(request,month):
     """
   try:
       challenge_text = monthly_challenges[month]
-      return render(request,"challenges/challenge.html")
+
+      # Pass data to the template via context dictionary
+      context = {
+              "text": challenge_text,
+                }
+      return render(request,"challenges/challenge.html",context)
   except:
       return HttpResponseNotFound("<h1>This month is not supported!</h1>")     
 
