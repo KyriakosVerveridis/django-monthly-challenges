@@ -72,7 +72,7 @@ def monthly_challenge(request,month):
       # Pass data to the template via context dictionary
       context = {
               "text": challenge_text,
-              "month_name": month.capitalize(),
+              "month_name": month,
                 }
       return render(request,"challenges/challenge.html",context)
   except:
