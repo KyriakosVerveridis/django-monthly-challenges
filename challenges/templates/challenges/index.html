@@ -8,7 +8,9 @@
 <body>
   <ul>
     {% for month in months %}
-    <li><a href="">{{ month|title }}</a></li>
+
+    {% comment %} Displays a list of months, each month is a link to its own challenge page {% endcomment %}
+    <li><a href="{% url "month-challenge" month %}">{{ month }}</a></li>
     {% endfor %}
   </ul>  
 </body>
