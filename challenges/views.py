@@ -22,18 +22,13 @@ monthly_challenges = {
 
 def index(request):
    """Display a list of all months as links to their challenge pages."""
-   list_items = ""
    months = list(monthly_challenges.keys())
-   for month in months:
-      capitalized_month = month.capitalize()
 
-       # Generate URL for each month's challenge
-      month_path = reverse("month-challenge",args=[month])
-      list_items += f" <li><a href=\"{month_path}\">{capitalized_month}</a></li>"
+   context = {
+     "months": months,
+   }
 
-
-   respose_data =f"<ul>{list_items}</ul>"
-   return HttpResponse(f"<h1>{respose_data}</h1>")
+   return render(request,"challenges/index.html",context)
 
 
 def monthly_challenge_by_number(request,month):
