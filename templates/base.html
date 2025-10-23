@@ -3,9 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {% comment %} 
+  Page title block: can be overridden in child templates. 
+  {% endcomment %}
   <title>{% block page_title %}My Challenges{%  endblock %}</title>
+
+  {% comment %} 
+  CSS files block: add additional CSS links in child templates. 
+  {% endcomment %}
+  {% block css_files %}{% endblock %}
 </head>
 <body>
+
+  {% comment %} 
+  Main content block: child templates insert page-specific content here. 
+  {% endcomment %}
   {% block content %}{% endblock %}
 </body>
 </html>
