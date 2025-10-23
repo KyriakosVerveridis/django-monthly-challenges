@@ -7,6 +7,10 @@
   
 
   {% block content %}
+
+    {% comment %} this allows us to include header.html template  {% endcomment %}  
+    {% include "challenges/includes/header.html" %} 
+
   <h1>{{ month_name|title }} Challenge</h1>
   {% if text is not None %}
     <h2>{{ text }}</h2>

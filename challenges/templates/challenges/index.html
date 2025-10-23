@@ -5,6 +5,10 @@
     All Challenges
   {% endblock %}
   {% block content %}
+    
+    {% comment %} this allows us to include header.html template  {% endcomment %}
+    {% include "challenges/includes/header.html" %} 
+
   <ul>
     {% for month in months %}
 
