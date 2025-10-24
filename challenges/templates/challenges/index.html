@@ -7,6 +7,7 @@
 
 {% block css_files %}
 <link rel="stylesheet" href="{% static "challenges/challenges.css" %}">
+<link rel="stylesheet" href="{% static 'challenges/includes/header.css' %}">
 {% endblock %}
 
 {% block page_title %}
@@ -19,6 +20,7 @@
   this allows us to include header.html template. 
   {% endcomment %}
   {% include "challenges/includes/header.html" %} 
+  
 
   <ul>
     {% for month in months %}
@@ -26,7 +28,7 @@
     {% comment %} 
     Displays a list of months, each month is a link to its own challenge page. 
     {% endcomment %}
-    <li><a href="{% url "month-challenge" month %}">{{ month }}</a></li>
+    <li><a href="{% url "month-challenge" month %}">{{ month|title }}</a></li>
     {% endfor %}
   </ul>
 {% endblock %}
