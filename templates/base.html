@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +10,7 @@
   Page title block: can be overridden in child templates. 
   {% endcomment %}
   <title>{% block page_title %}My Challenges{%  endblock %}</title>
+  <link rel="stylesheet" href=" {% static "styles.css" %} ">
 
   {% comment %} 
   CSS files block: add additional CSS links in child templates. 
