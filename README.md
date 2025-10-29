@@ -10,8 +10,7 @@ This project helped me practice Django templates, static files, and the Django T
 ## 🚀 Features
 - Dynamic routing for monthly challenges  
 - Template inheritance using a shared `base.html`  
-- Reusable components (navigation, headers, footers)  
-- Clean and responsive frontend with **Bootstrap 5**  
+- Reusable components (navigation, headers, footers)   
 - Custom app-level static files for modular styling  
 - 404 error page for invalid months  
 
@@ -106,7 +105,7 @@ Through this project, I learned how to:
 - Serve and organize static files globally and per app
 - Build dynamic URLs using {% url %}
 - Handle invalid routes with custom 404 pages
-- Style pages using Bootstrap 5 and custom CSS
+- Style pages using custom CSS
 
 ---
 
